@@ -1,0 +1,40 @@
+.card{
+    margin: auto;
+    padding: 25px;
+}
+
+.create_heading{
+    color: #022335;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+label{
+    width: 340px;
+}
+
+.formStyle{
+    border-top-style: none; 
+    border-right-style: none; 
+    border-left-style: none; 
+    width: 320px;
+}
+
+/*To remove the outline that appears on clicking the input textbox*/
+input:focus {
+    outline: none;
+}
+
+.first_row{
+    display: flex;
+    justify-content: space-evenly;
+}
+.save_btn{
+    background-color: #022335;
+    color: white;
+    text-transform: uppercase; 
+    border-radius: 3px;
+    float: right;
+    width: 125px;
+    height: 40px;
+} 

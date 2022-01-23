@@ -1,0 +1,13 @@
+ .account-dashboard {
+  width: 550px;
+  height: 500px;
+  background: #ffffff;
+  box-shadow: 0px 20px 27px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  padding: 30px 80px; 
+}
+
+img{
+  height: 100px !important;
+  width: 100px !important;
+}

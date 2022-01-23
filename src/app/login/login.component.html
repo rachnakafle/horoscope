@@ -1,0 +1,53 @@
+<div class="form-container">
+  <div class="left">
+    <img src="assets/image 1.png" alt="" /> 
+  </div>
+
+  <div class="right">
+    <form class="form-signin" [formGroup]="loginform" (ngSubmit)="onSubmit()">
+      <h3 class="right-welcome">Welcome To</h3>
+      <img class="right-logo" src="assets/logo.png" />
+      <p class="right-para">
+        Login to get into the moment updates on the things that interest you
+      </p>
+
+      <div *ngIf="submitted" class="alert alert-danger">
+        {{submitted_msg}}
+      </div>
+
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Username or email address"
+        formControlName="user"
+      />
+      <span *ngIf="user && user.invalid && user.touched">
+        UserName is required</span
+      >
+      <br />
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Password"
+        formControlName="password"
+      />
+      <span *ngIf="password && password.invalid && password.touched">
+        Password is required</span
+      >
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value="remember-me" /> Remember me
+        </label>
+        <p class="right-pforgot">Forgot Your Password?</p>
+      </div>
+      <button
+        style="background-color: #e45415; border-radius: 37px; border: none"
+        class="btn btn-lg btn-primary btn-block"
+        [disabled]="loginform.invalid"
+        type="submit"
+      >
+        Sign in
+      </button>
+    </form>
+  </div>
+</div>

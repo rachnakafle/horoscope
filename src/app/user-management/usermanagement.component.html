@@ -1,0 +1,123 @@
+<nav class="navigate-usermanagement">
+  <ul>
+    <li
+      [routerLinkActive]="['active']"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a [routerLink]="'/usermanagement'">All Users</a>
+    </li>
+    <li
+      [routerLinkActive]="['active']"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a [routerLink]="'/usermanagement/user-roles'">User Roles</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container" *ngIf="this.router.url === '/usermanagement'">
+  <div class="headline">
+    <h6>
+      <a class="refresh_users" (click)="assignAllUsers()">
+        <span class="material-icons-outlined"> loop </span> </a
+      >All Users
+    </h6>
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#addUserModal"
+    >
+      +Add User
+    </button>
+  </div>
+
+  <!-- Table -->
+  <div class="table-responsive-sm">
+    <div *ngIf="loader" class="loader">
+      <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </div>
+    <table class="table table-mid-content table-bordered">
+      <thead>
+        <tr>
+          <th scope="col" width="5%">SN</th>
+          <th scope="col" width="25%">Full Name</th>
+          <th scope="col" width="10%">User Name</th>
+          <th scope="col" width="15%">Email</th>
+          <th scope="col" width="20%">Role</th>
+          <th scope="col" width="25%">Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr
+          *ngFor="
+            let user of allUsers
+              | paginate: { itemsPerPage: 10, currentPage: page };
+            let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ user.fullName }}</td>
+          <td>{{ user.userName }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.roles }}</td>
+          <td>
+            <a class="action_link">
+              <span
+                class="edit_icon material-icons"
+                data-toggle="modal"
+                data-target="#editUserModal"
+                (click)="editUser.assignUserData(user.id)">
+                edit
+              </span>
+            </a>
+            <!-- Delete -->
+            <a class="action_link">
+              <span
+                class="delete_icon material-icons"
+                data-toggle="modal"
+                data-target="#deleteUserModal"
+                (click)="deleteUser.deleteUser(user.id)">
+                delete
+              </span>
+            </a>
+            <!-- View -->
+            <a class="action_link">
+              <span 
+                class="password_icon material-icons"
+                data-toggle="modal"
+                data-target="#resetPasswordUserModal"
+                (click)="resetPassword.changePassword(user.id)">
+                lock
+              </span>
+            </a>  
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  </div>
+</div>
+<router-outlet></router-outlet>
+<app-create-user
+  #createUser
+  [allRoleLists]="allRoles"
+  (listAllUsers)="assignAllUsers()"
+></app-create-user>
+
+<app-edit-user
+  #editUser
+  [allRoleLists]="allRoles"
+  (listAllUsers)="assignAllUsers()"
+></app-edit-user>
+
+<app-delete-user
+  #deleteUser
+  (listAllUsers)="assignAllUsers()"
+></app-delete-user> 
+
+<dialog-changepassword-user #resetPassword>
+</dialog-changepassword-user>

@@ -1,0 +1,43 @@
+.container{
+    border: 1px solid  #E0E0E0;
+}
+
+.headline{
+    display: flex; 
+    justify-content:space-between; 
+    padding: 10px 0;
+    background: #e3e6ea;
+} 
+
+.headline h6{
+    font-style: normal;
+    font-weight: bolder;
+    padding: 10px;
+}
+
+.table{
+    table-layout: fixed;
+}
+
+.table td{
+    word-wrap: break-word;
+}
+
+.edit_icon{
+    background-color: #075C33;      
+}
+
+.delete_icon{
+    background-color: #C40000; 
+}
+
+.edit_icon, 
+.delete_icon{
+    border-radius: 50%;
+    display: inline-block;
+    padding: 3px;
+    margin: 1px;
+    font-size: 22px;
+    color:#fff;
+}
+

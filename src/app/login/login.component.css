@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800;900&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif; 
+} 
+
+.form-container{ 
+  display: flex;
+  flex-direction: row;
+  margin: 70px 0 0 100px;
+  width: 800px;
+  box-shadow: 2px 3px 10px -3px rgba(0,0,0,0.6);
+}
+
+input{
+  border-top-style: none; 
+  border-right-style: none; 
+  border-left-style: none; 
+  /* width: 320px; */
+}
+
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.left{
+  width: 354px;
+}
+
+.right{
+  width: 480px;
+  background-color: #fff;
+  padding: 40px 10px 20px 0px;
+}
+
+.right-welcome{
+  font-family: Poppins;
+  font-style:normal;
+  font-weight:bolder;
+  font-size: 1.5rem;
+  line-height: 27px;
+  text-align: center;
+  color: #000000;
+}
+
+.right-logo{
+  padding: 0 0 0 103px;
+}
+
+.right-para{
+  font-family: Poppins;
+  font-style: bold;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  padding: 10px;
+  color: #434246;
+}
+
+.checkbox{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.checkbox .right-pforgot{
+  color: #E45415;
+}
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+span{
+  color: red;
+  display: inline-block;
+  line-height: 16px;
+  margin: 7px 0;
+  font-size: 12px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .form-container{ 
+    margin: 80px 90px 0px 40px;
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+  }
+  .left {
+    display: none;
+  }
+
+  .right{
+    text-align: center;
+    width: 300px;
+    height: 430px;
+  }
+}

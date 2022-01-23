@@ -1,0 +1,49 @@
+.container {
+    padding: 10px;
+  }
+  
+  .cross_icon {
+    background-color: white;
+    color: blue;
+    display: inline-block;
+    border-radius: 50%;
+  }
+  
+  .cross_icon,
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .main_line {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    color: #022335;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  
+  button {
+    border-radius: 3px;
+    border: none;
+    width: 100px;
+    height: 40px;
+  }
+  
+  .confirm-btn {
+    background-color: #022335;
+    color: white;
+  }
+  
+  .cancel-btn {
+    background: #c4c4c4;
+    color: black;
+  }
+  

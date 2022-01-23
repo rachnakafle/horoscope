@@ -1,0 +1,41 @@
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;  
+  } 
+
+li a {
+    padding: 8px 20px 8px 20px; 
+    text-decoration: none;
+    font-size: 16px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+a:hover {
+    color: #f1f1f1;
+  }
+ul li ul{
+    background: #000;
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+  }
+ul li.active ul{
+  height: auto;
+  }
+.active{
+  background: #194862;
+}
+.active a{
+  color: #fff;
+}
+ul li.active li a{
+  color: #777;
+  padding-left: 40px;
+}
+ul li.active li a:hover{
+  background: #333;
+  color: #aaa;
+}
