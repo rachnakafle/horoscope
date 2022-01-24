@@ -3,4 +3,32 @@
         <h6>Monthly Horoscope</h6>
         <button type="button" (click)="openDialog()" class="btn btn-primary">+Create</button>
     </div>  
+
+    <div class="row date-picker mb-3">
+        <div class="col-8 text-left">
+          <strong>Month:</strong> <span class="selected_date">{{ selected_date | date:'MMMM' }}</span> 
+        </div> 
+        <div class="col-4 text-right">
+          <div class="form-group">
+            <div class="input-group">
+              <input
+                (ngModelChange)="dateChanged($event)"
+                class="form-control"
+                placeholder="yyyy-mm-dd"
+                name="dp"
+                [(ngModel)]="selected_date"
+                ngbDatepicker
+                #d="ngbDatepicker"
+              />
+              <div class="input-group-append">
+                <a (click)="d.toggle()" >
+                  <span class="material-icons"> today </span> 
+                </a>
+              </div>
+            </div>
+          </div>
+       
+        </div>
+      </div>
+      <!--.date-picker ends--> 
 </div>

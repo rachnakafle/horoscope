@@ -20,7 +20,7 @@ export class CreateManageComponent implements OnInit {
   symbol: any;
   symbolPath: any;
 
-  constructor(private _horoscopeservice: HoroscopeService) {}
+  constructor(private _horoscopeservice: HoroscopeService) {} 
 
   ngOnInit(): void {}
 

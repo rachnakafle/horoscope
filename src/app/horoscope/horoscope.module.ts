@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CKEditorModule } from 'ckeditor4-angular';
 
 import { HoroscopeRoutingModule } from './horoscope-routing.module'; 
 
@@ -45,6 +46,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
+    CKEditorModule 
   ]
 })
 export class HoroscopeModule { }

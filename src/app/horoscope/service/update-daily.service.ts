@@ -34,5 +34,11 @@ export class UpdateDailyService {
     );
   }
 
+  getById(id:any): Observable<any> {
+    return this.http.get(baseUrl+'/api/HoroscopeDetailsDaily/get-horoscopedetails-daily-by-id?Id='+id,this.options);
+  }
 
+  add(data: any): Observable<any> {
+    return this.http.post(baseUrl+'/api/HoroscopeDetailsDaily/add-horoscopedetails-daily', data, this.options);
+  }
 }

@@ -5,7 +5,7 @@ import {
   NgbDateAdapter,
   NgbDateNativeAdapter,
 } from '@ng-bootstrap/ng-bootstrap';
-import 'jquery';
+import 'jquery'; 
 
 
 @Component({
