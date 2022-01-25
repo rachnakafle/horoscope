@@ -1,1 +1,21 @@
-<p>paymentmanagement works!!!!!!!!!!!!!!!!!!</p>
+<h1>The reverse of Custompipe is {{ "custompipe" | custompipe }}</h1>
+
+<ul>
+  <li *ngFor="let user of users">
+    <div [innerHTML]="user.firstName | highlight: user.cityCode"></div>
+  </li>
+</ul>
+
+<table border="1"> 
+    <tr>  
+      <th>ID</th>  
+      <th>Name</th>  
+      <th>Gender</th>  
+    </tr>
+  
+    <tr *ngFor="let person of persons">  
+      <td>{{ person.id }}</td>  
+      <td>{{ person.name | gender:person.gender }}</td> 
+      <td>{{ person.gender }}</td> 
+    </tr>  
+</table>
