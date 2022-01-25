@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primaryBg: #022335;
+}
 
 html,
 body {
@@ -8,9 +11,19 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
-
 img {
   max-width: 100%;
+}
+
+.table{
+  table-layout: fixed;
+}
+
+.table.table td{
+  padding: 0.5rem;
+  line-height: 20px;
+  word-break: break-word;
+  vertical-align: middle;
 }
 
 h1,
@@ -26,6 +39,17 @@ h5 {
   line-height: 45px;
 }
 
+.table.table-striped.table-mid-content th,
+.table.table-striped.table-mid-content td {
+  vertical-align: middle;
+}
+.alert-danger{
+  background: #f7e5e7;
+}
+.grey_txt{
+  color: #777
+}
+
 /* For Login Form */
 input.ng-invalid.ng-touched {
   border-bottom: 1px solid red;
@@ -35,17 +59,9 @@ input.ng-invalid.ng-touched {
   font-weight: bolder;
 }
 
-.table{
-  table-layout: fixed;
-}
 
-.table td{
-  word-wrap: break-word;
-}
+/* Default Form Styling */
 
-/***********************************
-Default Form Stylings Starts
-**************************************/
 .form-group label{
   font-size: 14px;
   color: #979797;
@@ -68,9 +84,57 @@ Default Form Stylings Starts
   top: 10px;
 }
 
-/***********************************
-Bootstrap Modal 
-**************************************/
+
+/* Form Error Messages */
+
+.err_msg {
+  color: red;
+  display: inline-block;
+  line-height: 16px;
+  margin: 7px 0;
+}
+input.ng-invalid.ng-touched {
+  border-bottom: 1px solid red;
+}
+
+
+/* Buttons */
+
+.btn.btn-primary {
+  background: var(--primaryBg);
+  border: none;
+}
+.btn.btn-icon {
+  border: none;
+  margin: 0 3px;
+  border-radius: 50%;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  text-align: center;
+}
+.btn.btn-icon-edit {
+  background: linear-gradient(
+    180deg,
+    rgba(97, 124, 40, 0.65) 0%,
+    rgba(51, 91, 10, 0.9) 100%
+  );
+}
+.btn.btn-icon-view {
+  background: linear-gradient(
+    180deg,
+    rgba(227, 9, 9, 0.65) 0%,
+    rgba(134, 21, 21, 0.9) 100%
+  );
+}
+.btn.btn-icon span {
+  font-size: 16px;
+  line-height: 30px;
+  width: 100%;
+}
+
+/* Bootstrap Modal  */
 
 body.modal-open.modal-open.modal-open {
   overflow: visible;
@@ -116,9 +180,8 @@ input[type="file"]{
   padding: 30px;
 }
 
-/***********************************
-Page Item Starts
-**************************************/
+/* Page Item Starts */
+
 #profileMenuButton{
   width: 35px;
   height: 35px;
@@ -154,4 +217,13 @@ Page Item Starts
 .page-item-entry table{
   font-size: 14px;
   table-layout: fixed;
+}
+
+/* DATES */
+.selected_date{
+  font-size: 20px;
+  display: inline-block;
+  padding: 5px;
+  background: rgb(154, 245, 252);
+  margin-left: 10px;
 }

@@ -13,7 +13,7 @@
     top: 0;
 }
 .breadcrumb li:last-child:after{
-    display: none;
+    display: none; 
 }
 .breadcrumb li span{
     cursor: pointer;

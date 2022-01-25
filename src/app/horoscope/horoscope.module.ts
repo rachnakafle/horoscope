@@ -13,7 +13,6 @@ import { CreateWeeklyComponent } from './Dialogs/update-weekly/create-weekly/cre
 import { CreateManageComponent } from './Dialogs/horoscope/create-horoscope/create-manage.component';
 import { CreateMonthlyComponent } from './Dialogs/update-monthly/create-monthly/create-monthly.component';
 import { DeleteDailyComponent } from './Dialogs/update-daily/delete-daily/delete-daily.component';
-import { PreviewDailyComponent } from './Dialogs/update-daily/preview-daily/preview-daily.component';
 import { EditDailyComponent } from './Dialogs/update-daily/edit-daily/edit-daily.component';
 import { CreateYearlyComponent } from './Dialogs/update-yearly/create-yearly/create-yearly.component';
 import { HoroscopeComponent } from './horoscope.component';
@@ -28,7 +27,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CreateMonthlyComponent,
     CreateYearlyComponent,
     DeleteDailyComponent,
-    PreviewDailyComponent,
     EditDailyComponent,
     CreateComponent,
     HoroscopeComponent,

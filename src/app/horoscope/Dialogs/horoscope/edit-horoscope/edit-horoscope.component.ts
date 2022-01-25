@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { HoroscopeService } from 'src/app/horoscope/service/horoscope.service';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment'; 
 
 @Component({
   selector: 'dialog-edit-horoscope',

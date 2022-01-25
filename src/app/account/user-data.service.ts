@@ -27,7 +27,7 @@ export class UserDataService {
 
   constructor(private _userservice: UprofileServiceService) { }
 
-  getUserByUserName(username:any):Userprofile{
+  getUserByUserName(username:any):Userprofile{ 
     let testCurrentUser:any;
     this._userservice.getUserByUsername(username).subscribe({
       next:(data)=>{

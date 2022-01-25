@@ -26,6 +26,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HoroscopeModule } from './horoscope/horoscope.module';
 import { AccountModule } from './account/account.module';
 import { UserManagementModule } from './user-management/user-management.module';
+import { CustompipePipe } from './payment-management/custompipe.pipe';
+import { HighlightPipe } from './payment-management/highlight.pipe';
+import { GenderPipe } from './payment-management/gender.pipe';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { UserManagementModule } from './user-management/user-management.module';
     PaymentmanagementComponent,
     SettingsComponent,
     DashboardComponent,
-    PieChartComponent, 
+    PieChartComponent,
+    CustompipePipe,
+    HighlightPipe,
+    GenderPipe,
   ],
   
   imports: [

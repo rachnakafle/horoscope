@@ -41,4 +41,14 @@ export class UpdateDailyService {
   add(data: any): Observable<any> {
     return this.http.post(baseUrl+'/api/HoroscopeDetailsDaily/add-horoscopedetails-daily', data, this.options);
   }
+  
+  update(data: any): Observable<any> {
+    return this.http.put(baseUrl+'/api/HoroscopeDetailsDaily/update-horoscopedetails-daily', data, this.options);
+  }
+
+  delete(id:number): Observable<any> {
+    return this.http.delete(baseUrl+'/api/HoroscopeDetailsDaily/delete-horoscopedetails-daily?Id='+id, this.options);
+  }
+
+  
 }

@@ -4,14 +4,6 @@
     padding: 10px 0; 
 } 
 
-.selected_date{
-    font-size: 20px;
-    display: inline-block;
-    padding: 5px;
-    background: rgb(154, 245, 252);
-    margin-left: 10px;
-  }
-
 .btn{
     border: none;
 }
