@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { dataSource } from './sidemenu.datasource';
-import { Router } from '@angular/router'; 
 
 
 
@@ -13,7 +12,7 @@ export class SidemenuComponent implements OnInit {
   datas: any[] = dataSource;
  
   
-  constructor(private router: Router) {  
+  constructor() {  
   
   }
 
