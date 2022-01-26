@@ -1,9 +1,11 @@
 .navigate-usermanagement ul{
     display: flex;
-    justify-content: space-evenly; 
+    /* justify-content: space-evenly;  */
     list-style: none;
     background: #fff;
     border-radius: 3px; 
+    padding: 0;
+
 }
 
 .navigate-usermanagement li a{  
@@ -41,19 +43,12 @@
     width: 100%;
 } 
 
-.table{
-    table-layout: fixed;
-}
-
-.table td{
-    word-wrap: break-word;
-}
 
 .headline h6{
     left: 20px !important;
     position: relative;
     font-style: normal;
-    font-weight: bolder;
+    /* font-weight: bolder; */
 }
 
 .refresh_users{

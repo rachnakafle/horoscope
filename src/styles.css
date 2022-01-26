@@ -36,6 +36,11 @@ h5 {
   table-layout: fixed;
   font-size: 14px;
   font-family: "Poppins", sans-serif;
+  /* color: #91392b; */
+  font-weight: 400;
+  color: #212529;
+  padding: 0.5rem;
+  line-height: 20px;
 }
 
 .table.table td {
