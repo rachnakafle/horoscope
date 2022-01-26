@@ -1,6 +1,6 @@
 .navigate-horoscope ul{
     display: flex;
-    justify-content: space-evenly; 
+    /* justify-content: space-evenly;  */
     list-style: none;
     background: #fff;
     border-radius: 3px;
@@ -16,7 +16,7 @@
 }
 
 .navigate-horoscope li a:hover{
-    text-decoration: none;
+    text-decoration: none; 
 }
 
 .navigate-horoscope li.active a{
