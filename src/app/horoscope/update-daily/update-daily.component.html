@@ -5,7 +5,7 @@
       type="button"
       data-toggle="modal"
       data-target="#newDaily"
-      (click)="newDaily.assignAllHoros()"
+      (click)="newDaily.assignAllHoros()" 
       class="btn btn-primary"
     >
       +Create
@@ -39,7 +39,7 @@
     </div>
   </div>
   <!--.date-picker ends-->
-  <table class="table table-striped table-mid-content">
+  <table class="table table-striped table-mid-content table-bordered">
     <thead>
       <tr>
         <th scope="col" width="20%">SN</th>
@@ -58,7 +58,7 @@
           <!-- Edit -->
           <a class="action_link">
             <span
-              class="edit_icon material-icons-outlined"
+              class="edit_icon material-icons"
               data-toggle="modal"
               data-target="#editDaily"
               (click)="editDaily.assignAll(data.id)"
@@ -69,7 +69,7 @@
 
           <!-- Delete -->
           <a class="action_link">
-            <span class="delete_icon material-icons-outlined"
+            <span class="delete_icon material-icons"
             data-toggle="modal"
             data-target="#deleteDaily"
             (click)="deleteDaily.assignAll(data.id)"

@@ -8,6 +8,7 @@ body {
   height: 100%;
 }
 body {
+  background: #f3f3f3;
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
@@ -15,16 +16,6 @@ img {
   max-width: 100%;
 }
 
-.table{
-  table-layout: fixed;
-}
-
-.table.table td{
-  padding: 0.5rem;
-  line-height: 20px;
-  word-break: break-word;
-  vertical-align: middle;
-}
 
 h1,
 h2,
@@ -39,15 +30,34 @@ h5 {
   line-height: 45px;
 }
 
+/* TABLE STYLING */
+
+.table {
+  table-layout: fixed;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+.table.table td {
+  padding: 0.5rem;
+  line-height: 20px;
+  word-break: break-word;
+  vertical-align: middle;
+}
+
+.table-bordered{
+  border: 1px solid #dee2e6;
+}
+
 .table.table-striped.table-mid-content th,
 .table.table-striped.table-mid-content td {
   vertical-align: middle;
 }
-.alert-danger{
+.alert-danger {
   background: #f7e5e7;
 }
-.grey_txt{
-  color: #777
+.grey_txt {
+  color: #777;
 }
 
 /* For Login Form */
@@ -59,31 +69,29 @@ input.ng-invalid.ng-touched {
   font-weight: bolder;
 }
 
-
 /* Default Form Styling */
 
-.form-group label{
+.form-group label {
   font-size: 14px;
   color: #979797;
 }
-.form-control{
+.form-control {
   border-radius: 0;
   border: none;
   border-bottom: 1px solid #ccc;
   color: #000;
 }
-.form-control:focus{
+.form-control:focus {
   box-shadow: none;
   border-bottom: 1px solid #555;
 }
-.form-group .material-icons{
+.form-group .material-icons {
   color: #777;
   font-size: 20px;
   position: absolute;
   right: 25px;
   top: 10px;
 }
-
 
 /* Form Error Messages */
 
@@ -96,7 +104,6 @@ input.ng-invalid.ng-touched {
 input.ng-invalid.ng-touched {
   border-bottom: 1px solid red;
 }
-
 
 /* Buttons */
 
@@ -114,24 +121,58 @@ input.ng-invalid.ng-touched {
   padding: 0;
   text-align: center;
 }
-.btn.btn-icon-edit {
+
+.btn.btn-icon span {
+  font-size: 16px;
+  line-height: 30px;
+  width: 100%;
+}
+
+/* Icons */
+.edit_icon {
   background: linear-gradient(
     180deg,
     rgba(97, 124, 40, 0.65) 0%,
     rgba(51, 91, 10, 0.9) 100%
   );
 }
-.btn.btn-icon-view {
+
+.preview_icon {
+  background-color: #0c3684;
+}
+
+.delete_icon {
   background: linear-gradient(
     180deg,
     rgba(227, 9, 9, 0.65) 0%,
     rgba(134, 21, 21, 0.9) 100%
   );
 }
-.btn.btn-icon span {
-  font-size: 16px;
-  line-height: 30px;
-  width: 100%;
+
+.reset_icon {
+  background-color: #f63e25;
+}
+
+.password_icon {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(87, 87, 179, 1) 0%,
+    rgba(10, 118, 140, 1) 100%
+  );
+}
+
+.edit_icon,
+.preview_icon,
+.password_icon,
+.delete_icon,
+.reset_icon {
+  border-radius: 50%;
+  display: inline-block;
+  padding: 3px;
+  margin: 1px;
+  font-size: 22px;
+  color: #fff;
 }
 
 /* Bootstrap Modal  */
@@ -139,50 +180,49 @@ input.ng-invalid.ng-touched {
 body.modal-open.modal-open.modal-open {
   overflow: visible;
 }
-.modal-title{
+.modal-title {
   width: 100%;
   font-weight: 500;
   font-size: 18px;
   line-height: 25px;
   color: #022335;
 }
-.modal-body{
+.modal-body {
   padding: 40px;
 }
-.modal-body .row{
+.modal-body .row {
   padding-bottom: 20px;
 }
-.form-section-heading .title{
-    font-size: 20px;
-    font-weight: normal;
-    margin: 0 0 20px;
+.form-section-heading .title {
+  font-size: 20px;
+  font-weight: normal;
+  margin: 0 0 20px;
 }
 
-
-input[type="file"]{
+input[type="file"] {
   height: 45px;
 }
 
-.whiteheader-item{
-  background: #FFFFFF;
+.whiteheader-item {
+  background: #ffffff;
   box-shadow: 0px 20px 27px rgba(0, 0, 0, 0.05);
   border-radius: 6px;
 }
 .wh-item-heading {
   padding: 14px 30px;
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid #e0e0e0;
 }
-.wh-item-heading .title{
+.wh-item-heading .title {
   font-size: 18px;
   margin: 0;
 }
-.wh-item-entry{
+.wh-item-entry {
   padding: 30px;
 }
 
 /* Page Item Starts */
 
-#profileMenuButton{
+#profileMenuButton {
   width: 35px;
   height: 35px;
   overflow: hidden;
@@ -214,13 +254,13 @@ input[type="file"]{
 .page-item-entry a {
   text-decoration: none;
 }
-.page-item-entry table{
+.page-item-entry table {
   font-size: 14px;
   table-layout: fixed;
 }
 
 /* DATES */
-.selected_date{
+.selected_date {
   font-size: 20px;
   display: inline-block;
   padding: 5px;

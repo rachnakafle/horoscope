@@ -9,7 +9,7 @@ import 'jquery';
 
 
 @Component({
-  selector: 'app-update-daily',
+  selector: 'app-update-daily', 
   templateUrl: './update-daily.component.html',
   styleUrls: ['./update-daily.component.css'],
   providers: [

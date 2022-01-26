@@ -4,6 +4,7 @@
     list-style: none;
     background: #fff;
     border-radius: 3px;
+    padding: 0;
 }
 
 .navigate-horoscope li a{
@@ -31,30 +32,3 @@
     padding: 10px 0;
 } 
 
-.edit_icon{
-    background-color: #075C33;       
-}
-
-.preview_icon{
-    background-color: #0C3684; 
-}
-
-.delete_icon{
-    background-color: #C40000; 
-}
-
-.reset_icon{
-    background-color: #F63E25;
-}
-
-.edit_icon, 
-.preview_icon,
-.delete_icon,
-.reset_icon{
-    border-radius: 50%;
-    display: inline-block;
-    padding: 3px;
-    margin: 1px;
-    font-size: 22px;
-    color:#fff;
-}

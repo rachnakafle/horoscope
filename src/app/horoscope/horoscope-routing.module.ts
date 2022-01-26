@@ -12,7 +12,7 @@ const routes: Routes = [
     component: UpdateDailyComponent,  
     path: 'update-daily',
     data:{
-      breadcrumb: 'Update Daily Component'  
+      breadcrumb: 'Daily Update Horoscope'  
     },
     canActivate: [AuthGuard],
   },
@@ -21,7 +21,7 @@ const routes: Routes = [
     component: UpdateWeeklyComponent,
     path: 'update-weekly',
     data:{
-      breadcrumb: 'Update Weekly Component'
+      breadcrumb: 'Weekly Update Horoscope'
     },
     canActivate: [AuthGuard],
   },
@@ -30,7 +30,7 @@ const routes: Routes = [
     component: UpdateMonthlyComponent,
     path: 'update-monthly',
     data:{
-      breadcrumb: 'Update Monthly Component'
+      breadcrumb: 'Monthly Update Horoscope'
     },
     canActivate: [AuthGuard],
   },
@@ -38,7 +38,7 @@ const routes: Routes = [
     component: UpdateYearlyComponent,
     path: 'update-yearly',
     data:{
-      breadcrumb: 'Update Yearly Component'
+      breadcrumb: 'Yearly Update Horoscope'
     }, 
     canActivate: [AuthGuard],
   }

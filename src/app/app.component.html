@@ -3,19 +3,19 @@
         <a routerLink="/dashboard"> 
            <img src="assets/mypay-logo.png">
         </a>
-    </div>
+    </div> 
     <app-sidemenu></app-sidemenu>
 </div>
 
  <div id="main" class="openNav" [ngClass]="openNav ? 'main-opennav' : ' '">
     <app-nav-menu  [Uprofile] = "currentUser" *ngIf="this.router.url !== '/login'"  [openNav] = openNav (openSideNavFromChild) = "toggleSideNav()" ></app-nav-menu>
-    <div  [ngClass] = "(this.router.url === '/login') ? '' : 'content'">  
-        <div *ngIf="this.router.url !== '/login'" class="breadcrumbs">
-            <app-breadcrumbs></app-breadcrumbs>
-        </div>
+    <div class="breadcrumbs">
+        <app-breadcrumbs></app-breadcrumbs>
+      </div>
+    <div  [ngClass] = "(this.router.url === '/login') ? '' : 'content'">
         <router-outlet>
-        </router-outlet>    
-    </div>  
+        </router-outlet>     
+    </div>   
 </div>  
      
 

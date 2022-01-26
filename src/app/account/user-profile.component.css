@@ -1,13 +1,33 @@
  .account-dashboard {
-  width: 550px;
-  height: 500px;
-  background: #ffffff;
+  width: 500px;
+  height: 450px;
+  background: #ffff;
   box-shadow: 0px 20px 27px rgba(0, 0, 0, 0.05);
   border-radius: 6px;
-  padding: 30px 80px; 
+  padding: 20px 60px; 
 }
 
-img{
-  height: 100px !important;
-  width: 100px !important;
-} 
+.heading{
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.item-profile-pic-info{
+  padding: 10px 0 20px;
+}
+.item-profile-pic-info h5{
+  font-size: 25px;
+  font-weight: normal;
+  margin: 0;
+}
+.item-profile-pic-info p{
+  margin: 0;
+  color: #434246;
+}
+.item-profile-pic-image{
+  width: 94px;
+  height: 94px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #eee;
+  margin: 20px auto;
+}

@@ -4,7 +4,7 @@
       [routerLinkActive]="['active']"
       [routerLinkActiveOptions]="{ exact: true }"
     >
-      <a [routerLink]="'/horoscope'">Horoscope Master</a>
+      <a [routerLink]="'/horoscope'">Horoscope Master</a> 
     </li>
     <li
       [routerLinkActive]="['active']"
@@ -48,13 +48,13 @@
 
   <!-- Table Fetched From API -->
   <div class="row text-center">
-    <table class="table table-striped table-mid-content">
+    <table class="table table-striped table-mid-content table-bordered"> 
       <thead>
         <tr>
-          <th scope="col">S.N.</th>
+          <th scope="col" style="width: 5%;">S.N.</th>
           <th scope="col">Image</th>
           <th scope="col">English Title</th>
-          <!-- <th scope="col">English Subtitle</th> -->
+          <th scope="col">English Subtitle</th>
           <th scope="col">Nepali Title</th>
           <th scope="col">Nepali Subtitle</th>
           <th scope="col">Action</th>
@@ -73,9 +73,9 @@
           <td>
             {{ data.horoscopeNameEnglish }}
           </td>
-          <!-- <td>
+          <td>
             {{ data.horoscopeSubTitleEnglish }}
-          </td> -->
+          </td>
           <td>
             {{ data.horoscopeNameNepali }}
           </td>
@@ -99,7 +99,7 @@
               data-target="#deleteSign"
               (click)="deleteSign.deleteHorosId(data.id)"              
             >
-              <span class="delete_icon material-icons"> delete </span>
+              <span class="delete_icon material-icons"> delete </span> 
             </a>
           </td>
         </tr>
