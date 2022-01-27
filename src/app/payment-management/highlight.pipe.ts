@@ -17,3 +17,4 @@ export class HighlightPipe implements PipeTransform {
     }   
   }
 }
+ 
