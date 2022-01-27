@@ -46,6 +46,10 @@ export class PaymentmanagementComponent implements OnInit {
       gender: 0,
     },
   ];
+
+  credit:number = 50.36;
+
+  currentdate = new Date();
   constructor() {}
 
   ngOnInit(): void {}
