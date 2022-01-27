@@ -47,7 +47,7 @@ export class PaymentmanagementComponent implements OnInit {
     },
   ];
 
-  credit:number = 50.36;
+  credit:number = 504.3654444753763;
 
   currentdate = new Date();
   constructor() {}

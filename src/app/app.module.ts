@@ -29,6 +29,8 @@ import { UserManagementModule } from './user-management/user-management.module';
 import { CustompipePipe } from './payment-management/custompipe.pipe';
 import { HighlightPipe } from './payment-management/highlight.pipe';
 import { GenderPipe } from './payment-management/gender.pipe';
+import { CustomDatePipe } from './payment-management/custom.datepipe';
+import { CustomCurrencyPipe } from './payment-management/custom.currencypipe';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { GenderPipe } from './payment-management/gender.pipe';
     CustompipePipe,
     HighlightPipe,
     GenderPipe,
+    CustomDatePipe,
+    CustomCurrencyPipe,
   ],
   
   imports: [
