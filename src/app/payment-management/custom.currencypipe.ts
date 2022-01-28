@@ -14,7 +14,7 @@ registerLocaleData(localeFr, 'fr');
 export class CustomCurrencyPipe implements PipeTransform {
   transform(
     value: number,
-    currencyCode: string = 'EUR',
+    currencyCode: string = 'INR',
     digitsInfo: string = '3.2-2',
     locale: string = 'fr'
   ): string | null {
@@ -26,4 +26,4 @@ export class CustomCurrencyPipe implements PipeTransform {
       digitsInfo
     );
   }
-}
+}  
