@@ -20,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditHoroscopeComponent } from './Dialogs/horoscope/edit-horoscope/edit-horoscope.component';
 import { DeleteHoroscopeComponent } from './Dialogs/horoscope/delete-horoscope/delete-horoscope.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 @NgModule({
   declarations: [
     CreateManageComponent, 
@@ -44,7 +45,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    CKEditorModule 
+    CKEditorModule,
+    DragDropModule, 
   ]
 })
 export class HoroscopeModule { }
