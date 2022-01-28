@@ -6,16 +6,19 @@ import { UserRolesService } from './user-roles.service';
 @Component({
   selector: 'app-user-roles',
   templateUrl: './user-roles.component.html',
-  styleUrls: ['./user-roles.component.css']
+  styleUrls: ['./user-roles.component.css'],
 })
 export class UserRolesComponent implements OnInit {
+  loader: boolean = false;
   allRoles!: any;
   testRoles: any;
-  constructor( private dialogRef :MatDialog, public router: Router, private _userroleservices: UserRolesService) { } 
+  constructor(
+    public router: Router,
+    private _userroleservices: UserRolesService
+  ) {}
 
-
-  ngOnInit(): void { 
-
+  ngOnInit(): void {
+    this.loader = true;
     this._userroleservices.getAllRoles().subscribe({
       next: (data) => {
         this.testRoles = data;
@@ -23,12 +26,11 @@ export class UserRolesComponent implements OnInit {
       error: (err: Error) => {
         alert('Error:' + err);
       },
-      complete: () => { 
+      complete: () => {
         this.allRoles = this.testRoles.roles;
-        console.log(this.allRoles); 
-      }
-    }) 
+        this.loader = false;
+        console.log(this.allRoles);
+      },
+    });
   }
-
-
 }

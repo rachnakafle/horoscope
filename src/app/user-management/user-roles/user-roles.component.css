@@ -1,26 +1,2 @@
-.container{
-    border: 1px solid  #E0E0E0;
-}
-
-.headline{
-    display: flex; 
-    justify-content:space-between; 
-    padding: 10px 0;
-    background: #e3e6ea;
-} 
-
-.headline h6{
-    font-style: normal;
-    font-weight: bolder;
-    padding: 10px;
-}
-
-.table{
-    table-layout: fixed;
-}
-
-.table td{
-    word-wrap: break-word;
-}
 
 

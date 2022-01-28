@@ -16,7 +16,6 @@ img {
   max-width: 100%;
 }
 
-
 h1,
 h2,
 h3,
@@ -32,15 +31,42 @@ h5 {
 
 /* TABLE STYLING */
 
+/* USER MGMT */
+.headline {
+  display: flex;
+  justify-content: space-between;
+  background: #e3e6ea;
+  padding: 18px;
+  position: relative;
+  width: 100%;
+}
+
+.row {
+  background-color: #fff;
+  width: 100%;
+  margin-left: 1px;
+}
+
 .table {
+  width: 100%;
+  margin: 13px;
   table-layout: fixed;
   font-size: 14px;
   font-family: "Poppins", sans-serif;
-  /* color: #91392b; */
   font-weight: 400;
   color: #212529;
   padding: 0.5rem;
   line-height: 20px;
+}
+
+.headline h6 {
+  font-style: normal;
+  font-weight: bolder;
+  padding: 10px;
+}
+
+.table td {
+  word-wrap: break-word;
 }
 
 .table.table td {
@@ -50,7 +76,7 @@ h5 {
   vertical-align: middle;
 }
 
-.table-bordered{
+.table-bordered {
   border: 1px solid #dee2e6;
 }
 
@@ -58,11 +84,10 @@ h5 {
 .table.table-striped.table-mid-content td {
   vertical-align: middle;
 }
-.alert-danger {
-  background: #f7e5e7;
-}
-.grey_txt {
-  color: #777;
+
+/* Navbar */
+.navbar {
+  background: #fff;
 }
 
 /* For Login Form */
@@ -174,8 +199,8 @@ input.ng-invalid.ng-touched {
 .reset_icon {
   border-radius: 50%;
   display: inline-block;
-  padding: 3px;
-  margin: 1px;
+  padding: 5px;
+  margin: 3px;
   font-size: 22px;
   color: #fff;
 }

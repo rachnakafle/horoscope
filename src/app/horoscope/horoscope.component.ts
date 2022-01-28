@@ -17,6 +17,7 @@ import {
 })
 export class HoroscopeComponent implements OnInit {
   baseUrl = environment.baseUrl;
+  loader: boolean = false;
   horoscopedata: any;
 
   todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
@@ -31,6 +32,7 @@ export class HoroscopeComponent implements OnInit {
   }
 
   gethoroscope() {
+    this.loader = true;
     let temp:any;
     this._horoscopeservice.getAll().subscribe({
       next:(x:any)=>{
@@ -42,7 +44,7 @@ export class HoroscopeComponent implements OnInit {
       complete:()=>{
         this.horoscopedata = temp;
         (<any>$('.modal')).modal('hide');
-        // this.loader = false;
+        this.loader = false;
       } 
     });
   }

@@ -12,38 +12,47 @@
   </div>
 
   <!-- Table -->
-  <table class="table table-mid-content table-bordered">
-    <thead>
-      <tr>
-        <th scope="col">SN</th>
-        <th scope="col">Roll Type</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let role of allRoles; let i = index">
-        <td>{{ i + 1 }}</td>
-        <td>{{ role.roleName }}</td> 
-        <td>
-          <!-- Edit -->
-          <a class="action_link" (click)="editRole.assignRole(role.roleId)">
-            <span
-              class="edit_icon material-icons"
-              data-toggle="modal"
-              data-target="#editRoleModal"
-            >
-              mode_edit
-            </span>
-          </a>
-          <!-- Delete -->
-          <a class="action_link">
-            <span class="delete_icon material-icons"> delete </span>
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  <div class="row text-center">
+    <div *ngIf="loader" class="loader">
+      <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </div>
+    <table class="table table-mid-content table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">SN</th>
+          <th scope="col">Roll Type</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let role of allRoles; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ role.roleName }}</td>
+          <td>
+            <!-- Edit -->
+            <a class="action_link" (click)="editRole.assignRole(role.roleId)">
+              <span
+                class="edit_icon material-icons"
+                data-toggle="modal"
+                data-target="#editRoleModal"
+              >
+                mode_edit
+              </span>
+            </a>
+            <!-- Delete -->
+            <a class="action_link">
+              <span class="delete_icon material-icons"> delete </span>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-<dialog-create-roles></dialog-create-roles>
-<dialog-edit-roles #editRole></dialog-edit-roles>
+  <dialog-create-roles></dialog-create-roles>
+  <dialog-edit-roles #editRole></dialog-edit-roles>
+</div>
