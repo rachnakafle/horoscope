@@ -21,6 +21,8 @@ import { EditHoroscopeComponent } from './Dialogs/horoscope/edit-horoscope/edit-
 import { DeleteHoroscopeComponent } from './Dialogs/horoscope/delete-horoscope/delete-horoscope.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { CustomDatePipe } from './custom.datepipe';
+
 @NgModule({
   declarations: [
     CreateManageComponent, 
@@ -37,6 +39,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     UpdateYearlyComponent,
     EditHoroscopeComponent,
     DeleteHoroscopeComponent,
+    CustomDatePipe,
 
   ],
   imports: [

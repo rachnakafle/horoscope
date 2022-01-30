@@ -5,7 +5,7 @@
     </div>  
     <div class="row date-picker mb-3">
         <div class="col-8 text-left">
-          <strong>Week:</strong> <span class="selected_date">{{ selectedWeekStart | date }} - {{ selectedWeekEnd | date }}</span> 
+          <strong>Week:</strong> <span class="selected_date">({{ selectedWeekStart | customDate }}) to ({{ selectedWeekEnd | customDate }})</span> 
         </div> 
         <div class="col-4 text-right">
           <div class="form-group">
