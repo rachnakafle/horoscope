@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UpdateDailyService } from '../service/update-daily.service';
 import { DatePipe } from '@angular/common';
+
 import {
   NgbDateAdapter,
   NgbDateNativeAdapter,

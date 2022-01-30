@@ -1,1 +1,24 @@
-<p>settings workssss</p>
+<h2 style="color: red;"> Custom Angular Date Pipe</h2>
+<h5>MM-dd-yyyy : {{currentdate | customDate}}</h5>
+<hr>
+
+<form action="">
+    <p>Please select date format:</p>
+    <!-- <div *ngFor="let date of dateFormats">
+        <input type="radio" >
+        <label for="age1"> DD-MM-YYYY [{{currentdate | customDate: date}}]</label><br>
+        <input type="radio">
+        <label for="age2"> MM-DD-YYYY[{{currentdate | customDate: date}}]</label><br>  
+        <input type="radio">
+        <label for="age3"> YYYY-MM-DD[{{currentdate | customDate: date}}]</label>
+    </div> -->
+
+
+    <div *ngFor="let date of dateFormats; let i=index">
+        
+        <input value={{ date.dateformat }} name="dateFormat" type="radio" id="{{'date' + i}}" >
+        <label for="{{'date' + i}}"> date.dateformat</label><br>
+    </div>
+
+    {{currentdate | customDate}}
+</form>

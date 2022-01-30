@@ -9,4 +9,4 @@ export class CustomDatePipe extends DatePipe implements PipeTransform {
     // return super.transform(value, 'EEEE d MMMM y h:mm a');
     return super.transform(value, 'M-d-y');
   }
-}
+} 

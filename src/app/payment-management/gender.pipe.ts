@@ -9,5 +9,5 @@ export class GenderPipe implements PipeTransform {
       return 'Male';
     }
     return 'Female';
-  }
+  } 
 } 

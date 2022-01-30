@@ -46,6 +46,9 @@ h5 {
   width: 100%;
   margin-left: 1px;
 }
+.date-picker{
+  padding-top: 25px;
+}
 
 .table {
   width: 100%;

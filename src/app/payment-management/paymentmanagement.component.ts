@@ -5,8 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './paymentmanagement.component.html',
   styleUrls: ['./paymentmanagement.component.css'],
 })
-export class PaymentmanagementComponent implements OnInit {
-  users = [
+export class PaymentmanagementComponent implements OnInit { 
+  users = [ 
     {
       firstName: 'Rachana Kafle',
       city: 'Butwal',
@@ -53,4 +53,4 @@ export class PaymentmanagementComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-}
+} 

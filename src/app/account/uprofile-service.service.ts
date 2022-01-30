@@ -14,7 +14,7 @@ export class UprofileServiceService {
   baseUrl: string = environment.baseUrl;
   jwthelper = new JwtHelperService();
   headers = new HttpHeaders({
-    'Authorizarion': `Bearer ${this.getToken()}`
+    'Authorization': `Bearer ${this.getToken()}`
   });
   options = {headers: this.headers};
 
@@ -25,7 +25,7 @@ export class UprofileServiceService {
   }
 
   getUserByUsername(username: string):Observable<any>{
-    return this.http.get(this.baseUrl + '/api/UserManager/get-user-by-username?userName='+username);  
+    return this.http.get(this.baseUrl + '/api/UserManager/get-user-by-username?userName='+username, this.options);  
   }
 
   getToken(){

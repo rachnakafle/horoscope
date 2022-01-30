@@ -64,7 +64,6 @@ import { CustomCurrencyPipe } from './payment-management/custom.currencypipe';
     HttpClientModule,
     MatDialogModule,   
     AccountModule,
- 
     NgxPaginationModule, 
   ],
   providers: [DatePipe],
