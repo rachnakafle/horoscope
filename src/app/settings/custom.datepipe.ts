@@ -10,12 +10,9 @@ export class CustomDatePipe extends DatePipe implements PipeTransform {
     if(dateFormat === 'MM/DD/YYYY'){
       return super.transform( 'M-d-y');
     }
-    else if(dateFormat === 'DD/MM/YYYY'){
-      return super.transform( 'd-M-y');
-    } 
     else{
-      return super.transform('y-M-d' )
-    }   
+      return super.transform( 'd-M-y');
+    }  
   }
 } 
 

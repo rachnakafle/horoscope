@@ -1,25 +1,38 @@
-<h2 style="color: red;"> Custom Angular Date Pipe</h2>
-<h5>MM-dd-yyyy : {{currentdate | customDate}}</h5>
-<hr>
+<h2 style="color: red">Custom Angular Date Pipe</h2>
+<h5>MM-dd-yyyy : {{ currentdate | customDate }}</h5>
+<hr />
 
 <form action="">
-    <p>Please select date format:</p>
-    <!-- <div *ngFor="let date of dateFormats">
-        <input type="radio" >
-        <label for="age1"> DD-MM-YYYY [{{currentdate | customDate: date}}]</label><br>
-        <input type="radio">
-        <label for="age2"> MM-DD-YYYY[{{currentdate | customDate: date}}]</label><br>  
-        <input type="radio">
-        <label for="age3"> YYYY-MM-DD[{{currentdate | customDate: date}}]</label>
-    </div> -->
+  <p>Please select date format:</p>
+
+  <!-- <div *ngFor="let item of dateFormats; let i = index">
+    {{ i + 1 }}
+    <input
+      value="{{ item.format }} "
+      name="dateFormat"
+      [(ngModel)]="selectedDateFormat"
+      [ngModelOptions]="{ standalone: true }"
+      type="radio"
+      id="{{ i + 1 }}"
+    />
+    <label for="{{ i + 1 }}"> {{ item.format }}</label
+    ><br />
+  </div> -->
+
+  <select (change)="onChange($event)">
+      <option value="0" selected>Choose one date format</option>
+    <option *ngFor="let item of dateFormats; let i = index" value="{{ item.value }}">{{ item.format }}</option>
+  </select>
 
 
-    <div *ngFor="let date of dateFormats; let i=index">
-        
-        <input value={{ date.dateformat }} name="dateFormat" type="radio" id="{{'date' + i}}" >
-        <label for="{{'date' + i}}"> date.dateformat</label><br>
-    </div>
+  <p>Date: {{ currentdate | custom2Date: selectedDateFormat }}</p>
 
-    {{currentdate | customDate}}
-    {{currentdate | custom2Date}}
+  <!-- Two way data binding -->
+  <!-- <input
+    [(ngModel)]="random"
+    type="text"
+    [ngModelOptions]="{ standalone: true }"
+  />
+  <br />
+  <h1>{{ random }}</h1> -->
 </form>

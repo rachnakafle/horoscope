@@ -1,20 +1,19 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
+
 @Pipe({
   name: 'custom2Date',
 })
 export class Custom2DatePipe extends DatePipe implements PipeTransform {
-   override transform( dateFormat: any): any {
-    // return super.transform(value, 'EEEE d MMMM y h:mm a');
-    if(dateFormat === 'MM/DD/YYYY'){
-      return super.transform( 'M-d-y');
+  pipe = new DatePipe('en-US');
+  override transform(datevalue: any, format: any): any {
+    if(format != 0){
+      return this.pipe.transform(datevalue, format);
     }
-    else if(dateFormat === 'DD/MM/YYYY'){
-      return super.transform( 'd-M-y');
-    } 
-    else{
-      return super.transform('y-M-d' )
-    }   
+    else {
+      return datevalue;
+    }
+    
   }
-} 
+}

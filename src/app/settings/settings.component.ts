@@ -4,28 +4,41 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.css']
+  styleUrls: ['./settings.component.css'],
 })
 export class SettingsComponent implements OnInit {
- 
-  constructor() { }
-
+  constructor() {}
+  selectedDateFormat!: string ;
   currentdate = new Date();
 
   dateFormats = [
     {
-      dateformat: 'MM/DD/YYYY' 
+      format: '6/15/15',
+      value: 'M/d/yy',
     },
     {
-      dateformat: 'DD/MM/YYYY' 
-    },   
+      format: 'Jun 15, 2015',
+      value: 'MMM d, y',
+    },
     {
-      dateformat: 'YYYY/DD/MM'
-    }
-  ]
+      format: 'June 15, 2015',
+      value: 'MMMM d, y',
+    },
+    {
+      format: 'Monday, June 15, 2015',
+      value: 'EEEE, MMMM d, y',
+    },
+  ];
 
-  
-  
+  //  random = "";
+  onChange(e: any) {
+    // console.log(e.target.value);
+    this.selectedDateFormat = e.target.value;
+    console.log(this.selectedDateFormat);
+  }
+
   ngOnInit(): void {
+    // console.log(date.format);
+    console.log(this.selectedDateFormat);
   }
 }
