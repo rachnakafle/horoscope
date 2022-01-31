@@ -22,6 +22,7 @@ import { DeleteHoroscopeComponent } from './Dialogs/horoscope/delete-horoscope/d
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CustomDatePipe } from './custom.datepipe';
+import { Custom2DatePipe } from '../custom2.datepipe';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,8 @@ import { CustomDatePipe } from './custom.datepipe';
     EditHoroscopeComponent,
     DeleteHoroscopeComponent,
     CustomDatePipe,
+    Custom2DatePipe,
+    
 
   ],
   imports: [
@@ -50,6 +53,7 @@ import { CustomDatePipe } from './custom.datepipe';
     NgbModule,
     CKEditorModule,
     DragDropModule, 
+    
   ]
 })
 export class HoroscopeModule { }
