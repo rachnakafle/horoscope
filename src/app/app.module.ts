@@ -31,6 +31,7 @@ import { HighlightPipe } from './payment-management/highlight.pipe';
 import { GenderPipe } from './payment-management/gender.pipe';
 import { CustomDatePipe } from './payment-management/custom.datepipe';
 import { CustomCurrencyPipe } from './payment-management/custom.currencypipe';
+import { Custom2DatePipe } from './settings/custom2.datepipe';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { CustomCurrencyPipe } from './payment-management/custom.currencypipe';
     HighlightPipe,
     GenderPipe,
     CustomDatePipe,
+    Custom2DatePipe,
     CustomCurrencyPipe,
   ],
   
