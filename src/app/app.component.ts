@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { UprofileServiceService } from './account/uprofile-service.service';
@@ -10,6 +10,7 @@ import { Userprofile } from './interface/userprofile';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  selectedSomeDateFormat!: any;
   baseUrl = environment.baseUrl;
   currentUser: Userprofile ={
     fullName: '',
@@ -58,5 +59,5 @@ export class AppComponent {
       },
     });
   }
-   
+
 }

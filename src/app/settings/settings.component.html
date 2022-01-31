@@ -1,5 +1,5 @@
 <h2 style="color: red">Custom Angular Date Pipe</h2>
-<h5>MM-dd-yyyy : {{ currentdate | customDate }}</h5>
+<h5>MM-dd-yyyy : {{ currentdate | custom2Date : selectedDateFormat}}</h5>
 <hr />
 
 <form action="">
@@ -23,7 +23,6 @@
       <option value="0" selected>Choose one date format</option>
     <option *ngFor="let item of dateFormats; let i = index" value="{{ item.value }}">{{ item.format }}</option>
   </select>
-
 
   <p>Date: {{ currentdate | custom2Date: selectedDateFormat }}</p>
 

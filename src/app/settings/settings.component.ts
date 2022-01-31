@@ -1,4 +1,3 @@
-import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
   constructor() {}
-  selectedDateFormat!: string ;
+  selectedDateFormat!: any ;
   currentdate = new Date();
 
   dateFormats = [
@@ -31,9 +30,9 @@ export class SettingsComponent implements OnInit {
   ];
 
   //  random = "";
-  onChange(e: any) {
+  onChange(event: any) {
     // console.log(e.target.value);
-    this.selectedDateFormat = e.target.value;
+    this.selectedDateFormat = event.target.value;
     console.log(this.selectedDateFormat);
   }
 
