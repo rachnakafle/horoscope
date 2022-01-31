@@ -12,6 +12,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
 
+
 // Component modules
 import { AppComponent } from './app.component'; 
 import { NavMenuComponent } from './layout/nav-menu/nav-menu.component'; 
@@ -32,6 +33,8 @@ import { GenderPipe } from './payment-management/gender.pipe';
 import { CustomDatePipe } from './payment-management/custom.datepipe';
 import { CustomCurrencyPipe } from './payment-management/custom.currencypipe';
 import { Custom2DatePipe } from './settings/custom2.datepipe';
+import { StoreModule } from '@ngrx/store';
+import {simpleReducer} from './simple.reducer';
 
 @NgModule({
   declarations: [
@@ -66,7 +69,8 @@ import { Custom2DatePipe } from './settings/custom2.datepipe';
     HttpClientModule,
     MatDialogModule,   
     AccountModule,
-    NgxPaginationModule, 
+    NgxPaginationModule,
+    StoreModule.forRoot({message: simpleReducer}),
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

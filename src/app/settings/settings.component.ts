@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
+interface FormatState {
+  message: string;
+}
 
 @Component({
   selector: 'app-settings',
@@ -6,9 +12,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./settings.component.css'],
 })
 export class SettingsComponent implements OnInit {
-  constructor() {}
-  selectedDateFormat!: any ;
+  constructor(  private store: Store<FormatState>) {
+  
+  }
+  // selectedDateFormat!: any ;
   currentdate = new Date();
+  selectedDateFormat$!:Observable<string>; 
 
   dateFormats = [
     {
@@ -30,14 +39,25 @@ export class SettingsComponent implements OnInit {
   ];
 
   //  random = "";
-  onChange(event: any) {
-    // console.log(e.target.value);
-    this.selectedDateFormat = event.target.value;
-    console.log(this.selectedDateFormat);
-  }
+  // onChange(event: any) {
+  //   this.selectedDateFormat = event.target.value;
+  //   console.log(this.selectedDateFormat);
+  // }
 
   ngOnInit(): void {
     // console.log(date.format);
-    console.log(this.selectedDateFormat);
+    // console.log(this.selectedDateFormat);
+    this.store.dispatch({type: 'M/d/yy'});
+    this.selectedDateFormat$ = this.store.select('message');
   }
+
+  onChange(event: any) {  
+ 
+    
+    this.store.dispatch({type: event.target.value});   
+     
+    this.selectedDateFormat$ = this.store.select('message');
+  }
+
+
 }
