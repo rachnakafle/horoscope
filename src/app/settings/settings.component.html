@@ -7,21 +7,20 @@
 <hr />
 <p>Please select date format:</p>
 
-<!-- <div *ngFor="let item of dateFormats; let i = index">
-    {{ i + 1 }}
+<div *ngFor="let item of dateFormats; let i = index">
+    <!-- {{ i + 1 }} -->
     <input
-      value="{{ item.format }} "
+      value="{{ item.value }} "
       name="dateFormat"
-      [(ngModel)]="selectedDateFormat"
-      [ngModelOptions]="{ standalone: true }"
+      (change)="onChange($event)"  
       type="radio"
       id="{{ i + 1 }}"
     />
     <label for="{{ i + 1 }}"> {{ item.format }}</label
     ><br />
-  </div> -->
+  </div>
 
-<select (change)="onChange($event)">
+<!-- <select (change)="onChange($event)">
   <option value="0" selected>Choose one date format</option>
   <option
     *ngFor="let item of dateFormats; let i = index"
@@ -29,15 +28,15 @@
   >
     {{ item.format }}
   </option>
-</select>
-<br><br>
+</select> -->
 
-<p>Choose your date format:</p>
+
+<!-- <p>Choose your date format:</p>
 
 <form>
     <input type="radio" id="html" value="HTML">
     <label for="html">HTML</label><br>
-</form> 
+</form>  -->
 <!-- <p>Date: {{ currentdate | custom2Date: selectedDateFormat }}</p> -->
 
 <!-- Two way data binding -->

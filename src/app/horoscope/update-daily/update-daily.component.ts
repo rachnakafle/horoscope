@@ -44,6 +44,7 @@ export class UpdateDailyComponent implements OnInit {
   }
   ngOnInit(): void {
     this.getDailyHoros();
+    this.store.dispatch({type: 'M/d/yy'});
     this.selectedDateFormat$ = this.store.select('dateFormat');
   }
 
@@ -64,6 +65,8 @@ export class UpdateDailyComponent implements OnInit {
         console.log('Get Error:' + e);
       },
       complete: () => {
+        console.log(data);
+        
         this.alldaily = data.horoscopeDetailsDaily;
         (<any>$('.modal')).modal('hide');
       },

@@ -1,23 +1,12 @@
-import { Action } from "@ngrx/store";
+import { Action } from '@ngrx/store';
 
-export function simpleReducer(state: string ="M/d/yy", action: Action){
-    // console.log(action.type);
+ const initialState = {
+    dateFormat: 'dd-mm-yyy'
+ }
 
-    // switch (action.type){
-    //     case 'SPANISH':
-    //         return state ='Hola Mundo';
+export function simpleReducer(state: string = 'M/d/yy', action: Action) {
+  state = action.type;
+  console.log(state);
 
-    //     case 'FRENCH':
-    //         return state = 'Bonjour le monde';
-        
-    //     default:
-    //         return state;
-
-    // }
-
-    
-    state = action.type
-console.log(state);
-
-    return state
+  return state;
 }

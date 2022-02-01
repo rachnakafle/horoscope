@@ -48,7 +48,7 @@ export class SettingsComponent implements OnInit {
   ngOnInit(): void {
     // console.log(date.format);
     // console.log(this.selectedDateFormat);
-    this.store.dispatch({type: 'M/d/yy'});
+    // this.store.dispatch({type: 'M/d/yy'});
     this.selectedDateFormat$ = this.store.select('dateFormat');
   }
 
