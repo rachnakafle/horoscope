@@ -12,11 +12,13 @@
     </button>
   </div>
   <!-- <div class="row">  -->
-  <div class="row date-picker mb-3">
+  <div class="row date-picker mb-3"> 
     <div class="col-8 text-left">
       <strong>Date:</strong>
       <!-- <span class="selected_date">{{ selected_date | customDate }}</span> -->
-      <span class="selected_date">{{ selected_date | custom2Date : ' MMMM d , y' }}</span> 
+      <!-- <span class="selected_date">{{ selected_date | custom2Date : ' MMMM d , y' }}</span>  -->
+      <!-- <span class="selected_date">{{ selected_date}} - {{selectedDateFormat$ | async}}</span>  -->
+      <span *ngIf="selectedDateFormat$ | async; let myDateFormat" class="selected_date"> {{ selected_date |custom2Date: myDateFormat }} </span> 
     </div>
     <div class="col-4 text-right">
       <div class="form-group">

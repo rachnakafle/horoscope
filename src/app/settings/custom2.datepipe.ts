@@ -13,7 +13,6 @@ export class Custom2DatePipe extends DatePipe implements PipeTransform {
     }
     else {
       return datevalue;
-    }
-    
+    }    
   }
 }

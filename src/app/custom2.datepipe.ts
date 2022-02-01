@@ -16,4 +16,4 @@ export class Custom2DatePipe extends DatePipe implements PipeTransform {
     }
     
   }
-}
+} 

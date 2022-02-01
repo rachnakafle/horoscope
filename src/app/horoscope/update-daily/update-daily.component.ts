@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { UpdateDailyService } from '../service/update-daily.service';
 import { DatePipe } from '@angular/common';
+import { Store } from '@ngrx/store';
+import 'jquery'; 
+import { Observable } from 'rxjs';
+
+interface FormatState {
+  // message: string;
+  dateFormat: string;
+}
 
 import {
   NgbDateAdapter,
@@ -21,12 +29,14 @@ import 'jquery';
   ],
 })
 export class UpdateDailyComponent implements OnInit {
+  selectedDateFormat$!:Observable<string>;
   selected_date!: Date;
   alldaily: any;
   formatted_date: any;
   constructor(
     private _dailyservice: UpdateDailyService,
-    private _datepipe: DatePipe
+    private _datepipe: DatePipe,
+    private store: Store<FormatState>
   ) {
     this.selected_date = new Date();
     this.formatted_date = _datepipe.transform(this.selected_date, 'yyyy-MM-dd');
@@ -34,6 +44,7 @@ export class UpdateDailyComponent implements OnInit {
   }
   ngOnInit(): void {
     this.getDailyHoros();
+    this.selectedDateFormat$ = this.store.select('dateFormat');
   }
 
   dateChanged(e: any) {

@@ -1,13 +1,14 @@
 <h2 style="color: red">Custom Angular Date Pipe</h2>
 <!-- <h5>Today's Date : {{ currentdate | custom2Date : selectedDateFormat$ | async}}</h5> -->
 
-<p>{{selectedDateFormat$ | async}}</p>
+<!-- <p>{{selectedDateFormat$ | async}}</p> -->
+<h5 *ngIf="selectedDateFormat$ | async; let myDateFormat">
+  MM-dd-yyyy : {{ currentdate | custom2Date: myDateFormat }}
+</h5>
 <hr />
+<p>Please select date format:</p>
 
-
-  <p>Please select date format:</p>
-
-  <!-- <div *ngFor="let item of dateFormats; let i = index">
+<!-- <div *ngFor="let item of dateFormats; let i = index">
     {{ i + 1 }}
     <input
       value="{{ item.format }} "
@@ -21,19 +22,23 @@
     ><br />
   </div> -->
 
-  <select (change)="onChange($event)">
-      <option value="0" selected>Choose one date format</option>
-    <option *ngFor="let item of dateFormats; let i = index" value="{{ item.value }}">{{ item.format }}</option>
-  </select>
+<select (change)="onChange($event)">
+  <option value="0" selected>Choose one date format</option>
+  <option
+    *ngFor="let item of dateFormats; let i = index"
+    value="{{ item.value }}"
+  >
+    {{ item.format }}
+  </option>
+</select>
 
-  <!-- <p>Date: {{ currentdate | custom2Date: selectedDateFormat }}</p> -->
+<!-- <p>Date: {{ currentdate | custom2Date: selectedDateFormat }}</p> -->
 
-  <!-- Two way data binding -->
-  <!-- <input
+<!-- Two way data binding -->
+<!-- <input
     [(ngModel)]="random"
     type="text"
     [ngModelOptions]="{ standalone: true }"
   />
   <br />
   <h1>{{ random }}</h1> -->
-

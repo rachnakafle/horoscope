@@ -3,7 +3,8 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 interface FormatState {
-  message: string;
+  // message: string;
+  dateFormat: string; 
 }
 
 @Component({
@@ -48,16 +49,11 @@ export class SettingsComponent implements OnInit {
     // console.log(date.format);
     // console.log(this.selectedDateFormat);
     this.store.dispatch({type: 'M/d/yy'});
-    this.selectedDateFormat$ = this.store.select('message');
+    this.selectedDateFormat$ = this.store.select('dateFormat');
   }
 
-  onChange(event: any) {  
- 
-    
-    this.store.dispatch({type: event.target.value});   
-     
-    this.selectedDateFormat$ = this.store.select('message');
+  onChange(event: any) {      
+    this.store.dispatch({type: event.target.value});        
+    this.selectedDateFormat$ = this.store.select('dateFormat');
   }
-
-
 }
