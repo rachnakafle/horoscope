@@ -6,7 +6,7 @@
   <p>Please select date format:</p>
 
   <div *ngFor="let item of dateFormats; let i = index">
-    {{ i + 1 }}
+    <!-- {{ i + 1 }} -->
     <input
       value="{{ item.value }} "
       name="dateFormat"
@@ -19,12 +19,12 @@
     ><br />
   </div>
 
-  <select (change)="onChange($event)">
-      <option value="0" selected>Choose one date format</option>
+  <!-- <select (change)="onChange($event)">
+    <option value="0" selected>Choose one date format</option>
     <option *ngFor="let item of dateFormats; let i = index" value="{{ item.value }}">{{ item.format }}</option>
-  </select>
+  </select> -->
 
-  <p>Date: {{ currentdate | custom2Date: selectedDateFormat }}</p>
+  <!-- <p>Date: {{ currentdate | custom2Date: selectedDateFormat }}</p> -->
 
   <!-- Two way data binding -->
   <!-- <input
