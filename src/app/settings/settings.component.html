@@ -1,9 +1,8 @@
 <h2 style="color: red">Custom Angular Date Pipe</h2>
 <!-- <h5>Today's Date : {{ currentdate | custom2Date : selectedDateFormat$ | async}}</h5> -->
-
 <!-- <p>{{selectedDateFormat$ | async}}</p> -->
 <h5 *ngIf="selectedDateFormat$ | async; let myDateFormat">
-  MM-dd-yyyy : {{ currentdate | custom2Date: myDateFormat }}
+  Date : {{ currentdate | custom2Date: myDateFormat }}
 </h5>
 <hr />
 <p>Please select date format:</p>
@@ -31,7 +30,14 @@
     {{ item.format }}
   </option>
 </select>
+<br><br>
 
+<p>Choose your date format:</p>
+
+<form>
+    <input type="radio" id="html" value="HTML">
+    <label for="html">HTML</label><br>
+</form> 
 <!-- <p>Date: {{ currentdate | custom2Date: selectedDateFormat }}</p> -->
 
 <!-- Two way data binding -->
