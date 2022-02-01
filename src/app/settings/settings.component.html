@@ -5,10 +5,10 @@
 <form action="">
   <p>Please select date format:</p>
 
-  <!-- <div *ngFor="let item of dateFormats; let i = index">
+  <div *ngFor="let item of dateFormats; let i = index">
     {{ i + 1 }}
     <input
-      value="{{ item.format }} "
+      value="{{ item.value }} "
       name="dateFormat"
       [(ngModel)]="selectedDateFormat"
       [ngModelOptions]="{ standalone: true }"
@@ -17,7 +17,7 @@
     />
     <label for="{{ i + 1 }}"> {{ item.format }}</label
     ><br />
-  </div> -->
+  </div>
 
   <select (change)="onChange($event)">
       <option value="0" selected>Choose one date format</option>
