@@ -43,5 +43,13 @@
         <th scope="col" width="20%">Action</th>
       </tr>
     </thead>
+    <tbody *ngFor="let data of allweekly">
+      <tr>
+        <td>{{data.horoscopeId}}</td>
+        <td>{{data.horoscopeDescriptionNepali | slice: 3:120}}...</td>
+        <td>{{data.horoscopeDescriptionEnglish}}</td>
+        <td>Action</td>
+      </tr>
+    </tbody>
   </table>
 </div>

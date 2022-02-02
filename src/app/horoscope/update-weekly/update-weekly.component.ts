@@ -37,30 +37,32 @@ export class UpdateWeeklyComponent implements OnInit {
 
   ngOnInit(): void {
     this.getWeeklyRange();
-    // this.getWeeklyByDate();
+    this.getWeeklyByDate();  
   }
 
   dateChanged(e: any) {
     this.selected_date = e;
     this.getWeeklyRange();
   }
-  
-  // getWeeklyByDate() { 
-  //   let data:any;
-  //   this._weeklyservice.getWeekById(this.formatted_date).subscribe({
-  //     next:(x:any) => {
-  //       data = x;
-  //     },
-  //     error:(e:any) => {
-  //       console.log('Get Error:' + e);        
-  //     },
-  //     complete: () => {
-  //       this.allweekly = data.date;
-  //       console.log(this.allweekly);        
-  //     }
-  //   })
-  // }
+ 
+  //TO GET ALL THE WEEKLY_DATA BY DATE FROM API
+  getWeeklyByDate() { 
+    let data:any;
+    this._weeklyservice.getWeekByDate(this.formatted_date).subscribe({
+      next:(x:any) => {
+        data = x;
+      },
+      error:(e:any) => {
+        console.log('Get Error:' + e);        
+      },
+      complete: () => {
+        console.log(data);        
+        this.allweekly = data.horoscopeDetailsWaily;       
+      }
+    })
+  }
 
+  // TO GET THE DATE RANGE FROM API
   getWeeklyRange() { 
     let data: any;    
     this._weeklyservice.getWeekRange(this.formatted_date).subscribe({
@@ -72,7 +74,7 @@ export class UpdateWeeklyComponent implements OnInit {
       },
       complete: () => {
         this.weeklyrange = data.weekRange.weekRangeNepali;
-        console.log(this.weeklyrange);        
+        // console.log(this.weeklyrange);        
       }
     });
   }
