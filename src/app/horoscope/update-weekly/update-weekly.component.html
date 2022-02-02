@@ -1,7 +1,13 @@
 <div class="container">
   <div class="headline">
     <h6>Weekly Horoscope</h6>
-    <button type="button" (click)="openDialog()" class="btn btn-primary">
+    <button
+      type="button"
+      data-toggle="modal"
+      data-target="#newWeekly"
+      (click)="newWeekly.assignAllHoros()" 
+      class="btn btn-primary"
+    >
       +New Weekly
     </button>
   </div>
@@ -45,11 +51,45 @@
     </thead>
     <tbody *ngFor="let data of allweekly">
       <tr>
-        <td>{{data.horoscopeId}}</td>
-        <td>{{data.horoscopeDescriptionNepali | slice: 3:120}}...</td>
-        <td>{{data.horoscopeDescriptionEnglish}}</td>
-        <td>Action</td>
+        <td>{{ data.horoscopeId }}</td>
+        <td [innerHTML]="data.horoscopeDescriptionNepali"></td>
+        <td>{{ data.horoscopeDescriptionEnglish }}</td>
+        <td>
+          <!-- Edit -->
+          <a class="action_link">
+            <span
+              class="edit_icon material-icons"
+              data-toggle="modal"
+              data-target="#editWeekly"
+              (click)="editWeekly.assignAll(data.id)"
+            >
+              mode_edit
+            </span>
+          </a>
+
+          <!-- Delete -->
+          <a class="action_link">
+            <span
+              class="delete_icon material-icons"
+              data-toggle="modal"
+              data-target="#deleteWeekly"
+            >
+              delete
+            </span>
+          </a>
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
+
+<dialog-create-weekly
+  #newWeekly
+  [weeklyrange]="weeklyrange"
+  (getWeeklyHoros)=" getWeeklyByDate()"
+></dialog-create-weekly>
+
+<dialog-edit-weekly #editWeekly>
+  [weeklyrange]="weeklyrange"
+  (getWeeklyHoros)=" getWeeklyByDate()"
+</dialog-edit-weekly>

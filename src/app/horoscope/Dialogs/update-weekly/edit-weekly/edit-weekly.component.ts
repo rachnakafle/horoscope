@@ -1,27 +1,27 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { HoroscopeService } from 'src/app/horoscope/service/horoscope.service';
-import { UpdateDailyService } from 'src/app/horoscope/service/update-daily.service';
+import { FormControl, FormGroup } from '@angular/forms';
 import { environment } from 'src/environments/environment';
+import { UpdateWeeklyService } from 'src/app/horoscope/service/update-weekly.service';
 
 @Component({
-  selector: 'dialog-edit-daily',
-  templateUrl: './edit-daily.component.html',
-  styleUrls: ['./edit-daily.component.css'],
+  selector: 'dialog-edit-weekly',
+  templateUrl: './edit-weekly.component.html',
+  styleUrls: ['./edit-weekly.component.css']
 })
-export class EditDailyComponent implements OnInit {
+export class EditWeeklyComponent implements OnInit {
   baseUrl = environment.baseUrl;
 
-  @Input() selected_date: any;
-  @Output('getDailyHoros') getDailyHoros: EventEmitter<any> =
-    new EventEmitter();
+  @Input() weeklyrange: any;
+  @Output('getDailyHoros') getWeeklyHoros: EventEmitter<any> =
+  new EventEmitter();
 
-  editDailyForm = new FormGroup({
+  editWeeklyForm = new FormGroup({
     horoscopeId: new FormControl(''),
   });
-  
   allSigns: any;
   selectedId!: number;
+  selectedhorosId!: number;
   selectedDaily: any;
   engDesc: any;
   nepDesc: any;
@@ -29,8 +29,8 @@ export class EditDailyComponent implements OnInit {
 
   constructor(
     private _horoscopeservice: HoroscopeService,
-    private _dailyservice: UpdateDailyService
-  ) {}
+    private _weeklyservice: UpdateWeeklyService
+  ) { }
 
   ngOnInit(): void {}
 
@@ -48,10 +48,11 @@ export class EditDailyComponent implements OnInit {
 
   assignAll(id:number) {
     this.selectedId = id;
+    this.selectedhorosId = this.selectedhorosId;
     this.getAllSigns();
     
     let temp:any;
-    this._dailyservice.getById(id).subscribe({
+    this._weeklyservice.getWeekById(id).subscribe({
       next: (x: any) => {
         temp = x;
       },
@@ -75,16 +76,16 @@ export class EditDailyComponent implements OnInit {
     this.nepDesc = e.editor.getData();
   }
 
-  editDaily(){
-    
+  editWeekly(){    
     let data = {
       id: this.selectedId,
+      horoscopeId: this.selectedhorosId,
       horoscopeDescriptionEnglish: this.engDesc,
       horoscopeDescriptionNepali: this.nepDesc
     };
     console.log(data);
 
-    this._dailyservice.update(data).subscribe({
+    this._weeklyservice.updateWeekly(data).subscribe({
       next:(x:any)=>{
         console.log("success"+x);
       },
@@ -92,10 +93,9 @@ export class EditDailyComponent implements OnInit {
         console.log("Error:"+err);
       },
       complete:()=>{
-        this.getDailyHoros.emit();
+        this.getWeeklyHoros.emit();
+        console.log(this.getWeeklyHoros);                
       }
     });
-
   }
-
 }

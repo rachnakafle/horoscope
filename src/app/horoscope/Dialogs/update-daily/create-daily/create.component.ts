@@ -25,6 +25,7 @@ export class CreateComponent implements OnInit {
   createDailyForm = new FormGroup({
     horoscopeId: new FormControl('', Validators.required),
   });
+
   get horoscopeId() {
     return this.createDailyForm.get('horoscopeId');
   } 
@@ -75,7 +76,7 @@ export class CreateComponent implements OnInit {
       horoscopeDescriptionNepali: this.nepDesc,
     };
 
-    this._dailyservice.add(data).subscribe({
+    this._dailyservice.adddaily(data).subscribe({
       next: (x: any) => {},
       error: (err: any) => {
         console.log('Error:' + err);

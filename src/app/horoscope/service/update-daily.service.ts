@@ -23,7 +23,7 @@ export class UpdateDailyService {
       baseUrl + '/api/HoroscopeDetailsDaily/get-horoscopedetails-daily_list',
       this.options
     );
-  } 
+  }
 
   getByDate(date: any): Observable<any> {
     return this.http.get(
@@ -34,21 +34,37 @@ export class UpdateDailyService {
     );
   }
 
-  getById(id:any): Observable<any> {
-    return this.http.get(baseUrl+'/api/HoroscopeDetailsDaily/get-horoscopedetails-daily-by-id?Id='+id,this.options);
+  getById(id: any): Observable<any> {
+    return this.http.get(
+      baseUrl +
+        '/api/HoroscopeDetailsDaily/get-horoscopedetails-daily-by-id?Id=' +
+        id,
+      this.options
+    );
   }
 
-  add(data: any): Observable<any> {
-    return this.http.post(baseUrl+'/api/HoroscopeDetailsDaily/add-horoscopedetails-daily', data, this.options);
+  adddaily(data: any): Observable<any> {
+    return this.http.post(
+      baseUrl + '/api/HoroscopeDetailsDaily/add-horoscopedetails-daily',
+      data,
+      this.options
+    );
   }
-  
+
   update(data: any): Observable<any> {
-    return this.http.put(baseUrl+'/api/HoroscopeDetailsDaily/update-horoscopedetails-daily', data, this.options);
+    return this.http.put(
+      baseUrl + '/api/HoroscopeDetailsDaily/update-horoscopedetails-daily',
+      data,
+      this.options
+    );
   }
 
-  delete(id:number): Observable<any> {
-    return this.http.delete(baseUrl+'/api/HoroscopeDetailsDaily/delete-horoscopedetails-daily?Id='+id, this.options);
+  delete(id: number): Observable<any> {
+    return this.http.delete(
+      baseUrl +
+        '/api/HoroscopeDetailsDaily/delete-horoscopedetails-daily?Id=' +
+        id,
+      this.options
+    );
   }
-
-  
 }

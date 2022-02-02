@@ -50,4 +50,21 @@ export class UpdateWeeklyService {
       this.options
     );
   }
+
+  addWeekly(data: any): Observable<any> {
+    return this.http.post(
+      baseUrl + '/api/HoroscopeDetailsWeekly/add-horoscopedetails-weekly',
+      data,
+      this.options
+    );
+  }
+
+  updateWeekly(data: any): Observable<any> {
+    return this.http.put(
+      baseUrl + '/api/HoroscopeDetailsWeekly/update-horoscopedetails-weekly',
+      data,
+      this.options
+    );
+  }
+  
 }
