@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 const baseUrl = environment.baseUrl;
@@ -25,9 +26,27 @@ export class UpdateWeeklyService {
     );
   }
 
-  getWeekRange() {
+  getWeekByDate(date: any): Observable<any> {
     return this.http.get(
-      baseUrl + '/api/HoroscopeDetailsWeekly/get-week_range',
+      baseUrl +
+        '/api/HoroscopeDetailsWeekly/get-horoscopedetails-weekly-by-date?dDate=' +
+        date,
+      this.options
+    );
+  }
+
+  getWeekById(id: any): Observable<any> {
+    return this.http.get(
+      baseUrl +
+        '/api/HoroscopeDetailsWeekly/get-horoscopedetails-weekly-by-id?Id=' +
+        id,
+      this.options
+    );
+  }
+
+  getWeekRange(date: any) {
+    return this.http.get(
+      baseUrl + '/api/HoroscopeDetailsWeekly/get-week_range?dDate=' + date,
       this.options
     );
   }

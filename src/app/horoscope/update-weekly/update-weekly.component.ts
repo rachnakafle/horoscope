@@ -22,8 +22,9 @@ import { UpdateWeeklyService } from '../service/update-weekly.service';
 })
 export class UpdateWeeklyComponent implements OnInit {
   selected_date: Date;
-  selectedWeekStart: Date;
-  selectedWeekEnd: Date;
+  allweekly:any;
+  formatted_date: any;
+  weeklyrange: any;
 
   constructor(
     private dialogRef: MatDialog,
@@ -31,48 +32,50 @@ export class UpdateWeeklyComponent implements OnInit {
     private _weeklyservice: UpdateWeeklyService
   ) {
     this.selected_date = new Date();
-    this.selectedWeekStart = this.startOfWeek(this.selected_date);
-    this.selectedWeekEnd = this.endofweek(this.selected_date);
+    this.formatted_date = _datepipe.transform(this.selected_date, 'yyyy-MM-dd');
   }
 
   ngOnInit(): void {
-    console.log(this.selected_date.getDay());
-  }
-
-  startOfWeek(date: any) {
-    var diff = date.getDate() - date.getDay();
-    return new Date(date.setDate(diff));
-  }
-  endofweek(date: any) {
-    var lastday = date.getDate() - date.getDay() + 6;
-    return new Date(date.setDate(lastday));
+    this.getWeeklyRange();
+    // this.getWeeklyByDate();
   }
 
   dateChanged(e: any) {
     this.selected_date = e;
-    this.selectedWeekStart = this.startOfWeek(this.selected_date);
-    this.selectedWeekEnd = this.endofweek(this.selected_date);
-    this.getWeeklyByDate();
+    this.getWeeklyRange();
   }
-  getWeeklyByDate() {}
-
-  // getWeeklyRange() {
-  //   let selectedWeek = this._datepipe.transform(
-  //     this.selected_date, 'yyy-MM-dd'
-  //   );
-  //   let data: any;
-  //   this._weeklyservice.getWeekRange(selectedWeek).subscribe({
-  //     next: (x: any) => {
+  
+  // getWeeklyByDate() { 
+  //   let data:any;
+  //   this._weeklyservice.getWeekById(this.formatted_date).subscribe({
+  //     next:(x:any) => {
   //       data = x;
   //     },
-  //     error: (e: any) => {
+  //     error:(e:any) => {
   //       console.log('Get Error:' + e);        
   //     },
   //     complete: () => {
-  //       this.allweekly = data.
+  //       this.allweekly = data.date;
+  //       console.log(this.allweekly);        
   //     }
-  //   });
+  //   })
   // }
+
+  getWeeklyRange() { 
+    let data: any;    
+    this._weeklyservice.getWeekRange(this.formatted_date).subscribe({
+      next: (x: any) => {
+        data = x;
+      },
+      error: (e: any) => {
+        console.log('Get Error:' + e);        
+      },
+      complete: () => {
+        this.weeklyrange = data.weekRange.weekRangeNepali;
+        console.log(this.weeklyrange);        
+      }
+    });
+  }
 
   openDialog() {
     this.dialogRef.open(CreateWeeklyComponent);
