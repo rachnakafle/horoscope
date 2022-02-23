@@ -1,5 +1,6 @@
 <h2 style="color: red">Custom Angular Date Pipe</h2>
-<h5>Today's Date : {{ currentdate | custom2Date : selectedDateFormat}}</h5>
+
+<h5>Today's Date : {{ currentdate | custom2Date: selectedDateFormat }}</h5>
 <hr />
 
 <form action="">
@@ -18,20 +19,14 @@
     <label for="{{ i + 1 }}"> {{ item.format }}</label
     ><br />
   </div>
-
-  <!-- <select (change)="onChange($event)">
-    <option value="0" selected>Choose one date format</option>
-    <option *ngFor="let item of dateFormats; let i = index" value="{{ item.value }}">{{ item.format }}</option>
-  </select> -->
-
-  <!-- <p>Date: {{ currentdate | custom2Date: selectedDateFormat }}</p> -->
-
-  <!-- Two way data binding -->
-  <!-- <input
-    [(ngModel)]="random"
-    type="text"
-    [ngModelOptions]="{ standalone: true }"
-  />
-  <br />
-  <h1>{{ random }}</h1> -->
 </form>
+
+<br><br><br>
+
+<div>
+  <h6>12 hour time format: {{ currentdate | custom2Date: "h:mm:ss a" }}</h6>
+</div>
+
+<div>
+  <h6>24 hour time format: {{ currentdate | custom2Date: "HH:mm:ss" }}</h6>
+</div>

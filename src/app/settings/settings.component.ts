@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SettingsComponent implements OnInit {
   constructor() {}
   selectedDateFormat!: any ;
-  currentdate = new Date();
+  currentdate = new Date(); 
 
   dateFormats = [
     {
